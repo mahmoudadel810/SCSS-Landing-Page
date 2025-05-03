@@ -6,7 +6,8 @@ A clean, responsive website template built with HTML, CSS/SCSS, and JavaScript.
 
 ## Preview
 
-![Website Preview](screenshot.png)
+![Website Preview](<img width="1433" alt="Screenshot 2025-05-03 at 2 46 17 PM" src="https://github.com/user-attachments/assets/97af82f6-3dcc-48f0-9f4b-6c9674be1aa9" />)
+
 
 *Screenshot of the website homepage*
 
