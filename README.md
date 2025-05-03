@@ -2,7 +2,13 @@
 
 # Modern Website Template
 
-![Uploading Screenshot 2025-05-03 at 2.41.21 PM.png…]()
+A clean, responsive website template built with HTML, CSS/SCSS, and JavaScript.
+
+## Preview
+
+![Website Preview](screenshot.png)
+
+*Screenshot of the website homepage*
 
 ## Features
 
