@@ -1,0 +1,190 @@
+
+//yr main color
+$primary-font: Verdana, sans-serif;
+$heading-font: "Segoe UI", Arial, sans-serif;
+$code-font: Consolas, "courier new";
+$container-width: 1140px;
+$spacing-unit: 16px;
+$breakpoints: (
+  small: 601px,
+  medium: 993px,
+  large: 1205px
+);
+$colors: (
+  amber: #ffc107,
+  aqua: #00ffff,
+  blue: #2196F3,
+  // ... add all other colors
+);
+
+
+
+
+
+
+
+
+
+
+
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+@mixin responsive($breakpoint) {
+  @media (min-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+
+
+
+
+
+
+
+
+html {
+  box-sizing: border-box;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  margin: 0;
+  font: {
+    family: $primary-font;
+    size: 15px;
+  }
+  line-height: 1.5;
+}
+
+
+
+
+//=========================================================
+h1, h2, h3, h4, h5, h6 {
+  font: {
+    family: $heading-font;
+    weight: 400;
+  }
+  margin: 10px 0;
+  
+  @for $i from 1 through 6 {
+    &:nth-of-type(#{$i}) {
+      font-size: (42px - ($i * 6));
+    }
+  }
+}
+
+
+//grids
+.w3-row {
+  @include clearfix;
+}
+
+.w3-col {
+  float: left;
+  width: 100%;
+  
+  @for $i from 1 through 12 {
+    &.s#{$i} {
+      width: percentage($i / 12);
+    }
+  }
+  
+  @include responsive(medium) {
+    @for $i from 1 through 12 {
+      &.m#{$i} {
+        width: percentage($i / 12);
+      }
+    }
+  }
+  
+  @include responsive(large) {
+    @for $i from 1 through 12 {
+      &.l#{$i} {
+        width: percentage($i / 12);
+      }
+    }
+  }
+}
+
+@each $name, $color in $colors {
+  .w3-#{$name} {
+    background-color: $color !important;
+    color: if(lightness($color) > 50, #000, #fff) !important;
+  }
+  
+  .w3-text-#{$name} {
+    color: $color !important;
+  }
+  
+  .w3-border-#{$name} {
+    border-color: $color !important;
+  }
+}
+
+.w3-btn, .w3-button {
+  border: none;
+  padding: 8px $spacing-unit;
+  display: inline-block;
+  transition: all 0.3s;
+  
+  &:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+}
+
+
+
+
+@for $i from 1 through 6 {
+  .w3-padding-#{$i * 8} {
+    padding: ($i * 8px) !important;
+  }
+  
+  .w3-margin-#{$i * 8} {
+    margin: ($i * 8px) !important;
+  }
+}
+
+.w3-card {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.16);
+  
+  &-4 {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+}
+
+@keyframes w3-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(359deg); }
+}
+
+.w3-spin {
+  animation: w3-spin 2s linear infinite;
+}
+
+// Responsive
+@media (max-width: 600px) {
+  .w3-hide-small {
+    display: none !important;
+  }
+  
+  .w3-modal-content {
+    width: 100% !important;
+  }
+}
