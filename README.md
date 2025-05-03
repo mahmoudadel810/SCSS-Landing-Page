@@ -1,3 +1,5 @@
+<!-- @format -->
+
 # Modern Website Template
 
 ![Uploading Screenshot 2025-05-03 at 2.41.21 PM.png…]()
@@ -24,6 +26,7 @@ project/
 │   ├── team3.jpg
 │   ├── team4.jpg
 │   ├── tech_*.jpg      # Various tech images
+├── screenshot.png      # Website preview image
 └── README.md           # This file
 ```
 
